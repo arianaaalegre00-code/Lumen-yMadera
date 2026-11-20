@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUMEN &amp; MADERA · Mobiliario de autor</title>
+
+  <meta name="description"
+        content="LUMEN & MADERA — mueblería de diseño de alta gama. Piezas de autor en maderas nobles sustentables, diseño a medida y asesoramiento personalizado." />
+  <meta name="author" content="LUMEN & MADERA" />
+  <meta name="theme-color" content="#0b0c10" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LUMEN & MADERA · Mobiliario de autor" />
+  <meta property="og:description"
+        content="Minimalismo contemporáneo, maderas nobles y diseño artesanal. Colección propia y proyectos a medida." />
+  <meta property="og:image" content="assets/og-lumen-madera.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body id="top">
+
+  <!-- ==========================================================================
+       IMÁGENES A REEMPLAZAR (carpeta assets/, formato 4:5 para piezas ≈ 1000x1250)
+       Piezas        : assets/piezas/sofa-aurora.jpg · sillon-bruma.jpg
+                       mesa-terra.jpg · sillas-nogal.jpg · aparador-vega.jpg
+                       cama-duna.jpg · mesita-alba.jpg · espejo-circulo.jpg
+                       jarron-arcilla.jpg
+       Datos de contacto editables: email, teléfono, dirección y redes (sección Contacto)
+       ========================================================================== -->
+
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ================================ HEADER ================================ -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+
+      <a class="brand" href="#top" aria-label="LUMEN y MADERA, inicio">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v18M5 8.5 12 5l7 3.5M4.5 15.5 12 19l7.5-3.5" />
+          </svg>
+        </span>
+        <span class="brand__text">
+          LUMEN<span class="brand__amp">&amp;</span>MADERA
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegación principal">
+        <a class="nav__link" href="#coleccion">Colección</a>
+        <a class="nav__link" href="#filosofia">Filosofía</a>
+        <a class="nav__link" href="#estudio">A Medida</a>
+        <a class="nav__link" href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--ghost btn--sm header__cta magnetic" href="#contacto">Asesoramiento</a>
+
+        <button class="cart-btn magnetic" id="cartBtn" type="button"
+                aria-label="Abrir carrito de compras" aria-expanded="false" aria-controls="cartDrawer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 7h12l1.2 12.2a1.6 1.6 0 0 1-1.6 1.8H6.4a1.6 1.6 0 0 1-1.6-1.8L6 7Z" />
+            <path d="M9 7V5.6A3 3 0 0 1 12 2.6a3 3 0 0 1 3 3V7" />
+          </svg>
+          <span class="cart-btn__count" id="cartCount" data-empty="true" aria-hidden="true">0</span>
+          <span class="sr-only" id="cartCountLabel">0 productos en el carrito</span>
+        </button>
+
+        <button class="burger" id="burger" type="button"
+                aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============================= CARRITO (DRAWER) ============================= -->
+  <div class="overlay" id="overlay" hidden></div>
+
+  <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true"
+         aria-labelledby="drawerTitle" tabindex="-1">
+
+    <div class="drawer__head">
+      <div>
+        <p class="drawer__eyebrow">Selección</p>
+        <h2 class="drawer__title" id="drawerTitle">
+          Tu carrito <span class="drawer__badge" id="drawerCount">0</span>
+        </h2>
+      </div>
+      <button class="icon-btn" id="drawerClose" type="button" aria-label="Cerrar carrito">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" aria-hidden="true">
+          <path d="m6 6 12 12M18 6 6 18" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer__body" id="drawerBody">
+
+      <div class="cart-empty" id="cartEmpty">
+        <span class="cart-empty__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 7h12l1.2 12.2a1.6 1.6 0 0 1-1.6 1.8H6.4a1.6 1.6 0 0 1-1.6-1.8L6 7Z" />
+            <path d="M9 7V5.6A3 3 0 0 1 12 2.6a3 3 0 0 1 3 3V7" />
+          </svg>
+        </span>
+        <p class="cart-empty__title">Tu carrito está vacío</p>
+        <p class="cart-empty__text">Explorá la colección y sumá piezas únicas hechas a mano.</p>
+        <button class="btn btn--ghost btn--sm" id="emptyCta" type="button">Ver la colección</button>
+      </div>
+
+      <ul class="cart-list" id="cartList" aria-live="polite"></ul>
+    </div>
+
+    <div class="drawer__foot" id="drawerFoot">
+      <dl class="summary">
+        <div class="summary__row">
+          <dt>Subtotal</dt>
+          <dd id="sumSubtotal">$ 0</dd>
+        </div>
+        <div class="summary__row">
+          <dt>Envío</dt>
+          <dd id="sumShipping">—</dd>
+        </div>
+        <div class="summary__row summary__row--total">
+          <dt>Total</dt>
+          <dd id="sumTotal">$ 0</dd>
+        </div>
+      </dl>
+
+      <p class="drawer__note" id="shippingNote">
+        Envío sin cargo en pedidos superiores a $ 1.000.000.
+      </p>
+
+      <button class="btn btn--primary btn--block" id="checkoutBtn" type="button">
+        <span class="btn__label">Finalizar compra</span>
+        <span class="btn__spinner" aria-hidden="true"></span>
+      </button>
+      <button class="btn btn--ghost btn--block btn--sm" id="continueBtn" type="button">
+        Seguir explorando
+      </button>
+    </div>
+
+    <div class="drawer__success" id="drawerSuccess" hidden>
+      <span class="success-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="m5 13 4.5 4.5L19 7" />
+        </svg>
+      </span>
+      <h3 class="drawer__success-title">¡Compra confirmada!</h3>
+      <p class="drawer__success-text">
+        Gracias por elegir piezas de autor. Tu pedido
+        <strong id="orderCode">—</strong> ya está en el taller.
+        Te escribimos en las próximas 24 h para coordinar la entrega y el montaje.
+      </p>
+      <button class="btn btn--primary btn--block" id="successClose" type="button">
+        Volver al sitio
+      </button>
+    </div>
+
+  </aside>
+
+  <main id="main">
+
+    <!-- ================================== HERO ================================== -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="orb orb--wood"></span>
+        <span class="orb orb--rose"></span>
+        <span class="hero__lines"></span>
+      </div>
+
+      <div class="container hero__inner">
+
+        <div class="hero__copy">
+          <p class="eyebrow reveal">
+            <span class="eyebrow__dot"></span>
+            Mobiliario de autor · Buenos Aires
+          </p>
+
+          <h1 class="hero__title reveal">
+            Piezas que <em>iluminan</em><br />
+            el silencio de tu casa
+          </h1>
+
+          <p class="hero__lead reveal">
+            Diseñamos y fabricamos mobiliario en maderas nobles de origen sustentable.
+            Líneas limpias, uniones a la vista y una calidez que sólo da la materia viva.
+          </p>
+
+          <div class="hero__actions reveal">
+            <a class="btn btn--primary magnetic" href="#coleccion">
+              <span class="btn__label">Explorar Colección</span>
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a class="btn btn--ghost magnetic" href="#estudio">Asesoramiento a Medida</a>
+          </div>
+
+          <ul class="hero__meta reveal">
+            <li><strong>30</strong> días de fabricación</li>
+            <li><strong>100%</strong> madera certificada</li>
+            <li><strong>10</strong> años de garantía</li>
+          </ul>
+        </div>
+
+        <div class="hero__stage reveal" aria-hidden="true">
+          <div class="hero__frame lux">
+            <span class="hero__grain"></span>
+            <span class="hero__ring"></span>
+            <span class="hero__ring hero__ring--2"></span>
+          </div>
+
+          <article class="hero__card glass lux">
+            <p class="hero__card-eyebrow">Pieza destacada</p>
+            <h3 class="hero__card-title">Sofá Aurora</h3>
+            <p class="hero__card-text">Roble macizo · Lino crudo</p>
+            <p class="hero__card-price">$ 1.480.000</p>
+          </article>
+        </div>
+
+      </div>
+
+      <a class="hero__scroll" href="#filosofia">
+        <span>Descubrir</span>
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ================================ MARQUEE ================================ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Roble macizo</span><span class="marquee__sep">·</span>
+        <span>Nogal americano</span><span class="marquee__sep">·</span>
+        <span>Petiribí</span><span class="marquee__sep">·</span>
+        <span>Fresno blanco</span><span class="marquee__sep">·</span>
+        <span>Uniones a la vista</span><span class="marquee__sep">·</span>
+        <span>Acabado al aceite</span><span class="marquee__sep">·</span>
+        <span>Roble macizo</span><span class="marquee__sep">·</span>
+        <span>Nogal americano</span><span class="marquee__sep">·</span>
+        <span>Petiribí</span><span class="marquee__sep">·</span>
+        <span>Fresno blanco</span><span class="marquee__sep">·</span>
+        <span>Uniones a la vista</span><span class="marquee__sep">·</span>
+        <span>Acabado al aceite</span><span class="marquee__sep">·</span>
+      </div>
+    </div>
+
+    <!-- =============================== FILOSOFÍA =============================== -->
+    <section class="section philosophy" id="filosofia">
+      <div class="container philosophy__inner">
+
+        <div class="philosophy__copy">
+          <p class="eyebrow reveal"><span class="eyebrow__dot"></span> Manifiesto</p>
+          <h2 class="section__title reveal">
+            La nobleza de lo <em>esencial</em>
+          </h2>
+          <p class="philosophy__lead reveal">
+            Creemos que un mueble no se compra: se hereda. Por eso trabajamos con maderas de
+            bosques gestionados, tintes de origen vegetal y uniones que no esconden su técnica.
+          </p>
+          <p class="philosophy__text reveal">
+            Cada pieza pasa por las manos de un mismo equipo, del primer boceto al último lijado.
+            Sin producción en serie, sin atajos. El resultado es mobiliario que envejece bien:
+            que gana carácter con el uso en lugar de perderlo.
+          </p>
+
+          <ul class="pillars reveal">
+            <li class="pillar">
+              <span class="pillar__num">01</span>
+              <h3 class="pillar__title">Materia noble</h3>
+              <p class="pillar__text">Roble, nogal y petiribí de origen certificado, secados al aire durante 18 meses.</p>
+            </li>
+            <li class="pillar">
+              <span class="pillar__num">02</span>
+              <h3 class="pillar__title">Hecho a mano</h3>
+              <p class="pillar__text">Ensambles tradicionales, lijado a mano y acabado al aceite natural.</p>
+            </li>
+            <li class="pillar">
+              <span class="pillar__num">03</span>
+              <h3 class="pillar__title">Ciclo cerrado</h3>
+              <p class="pillar__text">Recuperamos el 100% del aserrín y los recortes para piezas menores y briquetas.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="philosophy__swatches reveal">
+          <article class="swatch lux" data-wood="roble">
+            <span class="swatch__chip"></span>
+            <div class="swatch__info">
+              <h3>Roble macizo</h3>
+              <p>Fibra abierta, tono miel. Envejece hacia un dorado profundo.</p>
+            </div>
+          </article>
+          <article class="swatch lux" data-wood="nogal">
+            <span class="swatch__chip"></span>
+            <div class="swatch__info">
+              <h3>Nogal americano</h3>
+              <p>Veta ondulada y chocolate. La madera más expresiva del taller.</p>
+            </div>
+          </article>
+          <article class="swatch lux" data-wood="petiribi">
+            <span class="swatch__chip"></span>
+            <div class="swatch__info">
+              <h3>Petiribí</h3>
+              <p>Denso y sereno, con destellos rosados. Ideal para superficies amplias.</p>
+            </div>
+          </article>
+
+          <p class="swatch__signature">
+            <em>“Diseñamos objetos que acompañan sin gritar.”</em>
+            <span>— Estudio LUMEN &amp; MADERA</span>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================== COLECCIÓN =============================== -->
+    <section class="section collection" id="coleccion">
+      <div class="container">
+
+        <header class="section__head">
+          <div>
+            <p class="eyebrow reveal"><span class="eyebrow__dot"></span> Colección 2026</p>
+            <h2 class="section__title reveal">Piezas de <em>autor</em></h2>
+          </div>
+          <p class="section__lead reveal">
+            Nueve diseños propios, producidos en series limitadas dentro de nuestro taller.
+            Filtrá por ambiente y armá tu carrito.
+          </p>
+        </header>
+
+        <div class="filters reveal" role="group" aria-label="Filtrar piezas por ambiente">
+          <button class="filter is-active" type="button" data-filter="all">Todos</button>
+          <button class="filter" type="button" data-filter="living">Living</button>
+          <button class="filter" type="button" data-filter="comedor">Comedor</button>
+          <button class="filter" type="button" data-filter="dormitorio">Dormitorio</button>
+          <button class="filter" type="button" data-filter="deco">Iluminación &amp; Deco</button>
+        </div>
+
+        <p class="filters__count reveal">
+          Mostrando <strong id="piecesCount">9</strong> piezas
+        </p>
+
+        <div class="pieces" id="pieces">
+
+          <!-- 01 -->
+          <article class="piece lux reveal" data-id="p01" data-category="living"
+                   data-name="Sofá Aurora" data-category-label="Living" data-price="1480000" data-exclusive="true">
+            <div class="piece__media" data-mark="Aurora">
+              <img src="assets/piezas/sofa-aurora.jpg" alt="Sofá Aurora en roble macizo y lino crudo"
+                   loading="lazy" decoding="async" />
+              <span class="piece__tag">Exclusivo</span>
+              <button class="piece__quick" type="button" data-quick
+                      aria-label="Añadir Sofá Aurora al carrito">Añadir al carrito</button>
+            </div>
+            <div class="piece__body">
+              <p class="piece__cat">Living</p>
+              <h3 class="piece__name">Sofá Aurora</h3>
+              <p class="piece__spec">Roble macizo · Lino crudo</p>
+              <div class="piece__foot">
+                <p class="piece__price">$ 1.480.000</p>
+                <button class="piece__add" type="button" data-add
+                        aria-label="Añadir Sofá Aurora al carrito">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                       stroke-linecap="round" aria-hidden="true">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                  <span>Añadir</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 02 -->
+          <article class="piece lux reveal" data-id="p02" data-category="living"
+                   data-name="Sillón Bruma" data-category-label="Living" data-price="620000">
+            <div class="piece__media" data-mark="Bruma">
+              <img src="assets/piezas/sillon-bruma.jpg" alt="Sillón Bruma tapizado en bouclé"
+                   loading="lazy" decoding="async" />
+              <button class="piece__quick" type="button" data-quick
+                      aria-label="Añadir Sillón Bruma al carrito">Añadir al carrito</button>
+            </div>
+            <div class="piece__body">
+              <p class="piece__cat">Living</p>
+              <h3 class="piece__name">Sillón Bruma</h3>
+              <p class="piece__spec">Fresno blanco · Bouclé</p>
+              <div class="piece__foot">
+                <p class="piece__price">$ 620.000</p>
+                <button class="piece__add" type="button" data-add
+                        aria-label="Añadir Sillón Bruma al carrito">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                       stroke-linecap="round" aria-hidden="true">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                  <span>Añadir</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03 -->
+          <article class="piece lux reveal" data-id="p04" data-category="comedor"
+                   data-name="Mesa Comedor Terra" data-category-label="Comedor" data-price="1950000">
+            <div class="piece__media" data-mark="Terra">
+              <img src="assets/piezas/mesa-terra.jpg" alt="Mesa de comedor Terra de 240 centímetros"
+                   loading="lazy" decoding="async" />
+              <button class="piece__quick" type="button" data-quick
+                      aria-label="Añadir Mesa Comedor Terra al carrito">Añadir al carrito</button>
+            </div>
+            <div class="piece__body">
+              <p class="piece__cat">Comedor</p>
+              <h3 class="piece__name">Mesa Comedor Terra</h3>
+              <p class="piece__spec">Roble macizo · 240 cm</p>
+              <div class="piece__foot">
+                <p class="piece__price">$ 1.950.000</p>
+                <button class="piece__add" type="button" data-add
+                        aria-label="Añadir Mesa Comedor Terra al carrito">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                       stroke-linecap="round" aria-hidden="true">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                  <span>Añadir</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 04 -->
+          <article class="piece lux reveal" data-id="p05" data-category="comedor"
+                   data-name="Sillas Nogal (set x4)" data-category-label="Comedor" data-price="780000" data-exclusive="true">
+            <div class="piece__media" data-mark="Nogal">
+              <img src="assets/piezas/sillas-nogal.jpg" alt="Set de cuatro sillas Nogal con asiento de cuero"
+                   loading="lazy" decoding="async" />
+              <span class="piece__tag">Exclusivo</span>
+              <button class="piece__quick" type="button" data-quick
+                      aria-label="Añadir Sillas Nogal al carrito">Añadir al carrito</button>
+            </div>
+            <div class="piece__body">
+              <p class="piece__cat">Comedor</p>
+              <h3 class="piece__name">Sillas Nogal <span class="piece__unit">(set x4)</span></h3>
+              <p class="piece__spec">Nogal · Cuero natural</p>
+              <div class="piece__foot">
+                <p class="piece__price">$ 780.000</p>
+                <button class="piece__add" type="button" data-add
+                        aria-label="Añadir Sillas Nogal al carrito">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                       stroke-linecap="round" aria-hidden="true">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                  <span>Añadir</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 05 -->
+          <article class="piece lux reveal" data-id="p06" data-category="comedor"
+                   data-name="Aparador Vega" data-category-label="Comedor" data-price="1120000">
+            <div class="piece__media" data-mark="Vega">
+              <img src="assets/piezas/aparador-vega.jpg" alt="Aparador Vega de cuatro puertas con herrajes de bronce"
+                   loading="lazy" decoding="async" />
+              <button class="piece__quick" type="button" data-quick
+                      aria-label="Añadir Aparador Vega al carrito">Añadir al carrito</button>
+            </div>
+            <div class="piece__body">
+              <p class="piece__cat">Comedor</p>
+              <h3 class="piece__name">Aparador Vega</h3>
+              <p class="piece__spec">Petiribí · Bronce</p>
+              <div class="piece__foot">
+                <p class="piece__price">$ 1.120.000</p>
+                <button class="piece__add" type="button" data-add
+                        aria-label="Añadir Aparador Vega al carrito">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                       stroke-linecap="round" aria-hidden="true">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                  <span>Añadir</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 06 -->
+          <article class="piece lux reveal" data-id="p07" data-category="dormitorio"
+                   data-name="Cama Duna" data-category-label="Dormitorio" data-price="1640000">
+            <div class="piece__media" data-mark="Duna">
+              <img src="assets/piezas/cama-duna.jpg" alt="Cama Duna con respaldo curvo en roble"
+                   loading="lazy" decoding="async" />
+              <button class="piece__quick" type="button" data-quick
+                      aria-label="Añadir Cama Duna al carrito">Añadir al carrito</button>
+            </div>
+            <div class="piece__body">
+              <p class="piece__cat">Dormitorio</p>
+              <h3 class="piece__name">Cama Duna</h3>
+              <p class="piece__spec">Roble · Queen 160</p>
+              <div class="piece__foot">
+                <p class="piece__price">$ 1.640.000</p>
+                <button class="piece__add" type="button" data-add
+                        aria-label="Añadir Cama Duna al carrito">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                       stroke-linecap="round" aria-hidden="true">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                  <span>Añadir</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 07 -->
+          <article class="piece lux reveal" data-id="p08" data-category="dormitorio"
+                   data-name="Mesita de Luz Alba" data-category-label="Dormitorio" data-price="240000">
+            <div class="piece__media" data-mark="Alba">
+              <img src="assets/piezas/mesita-alba.jpg" alt="Mesita de luz Alba con cajón oculto"
+                   loading="lazy" decoding="async" />
+              <button class="piece__quick" type="button" data-quick
+                      aria-label="Añadir Mesita de Luz Alba al carrito">Añadir al carrito</button>
+            </div>
+            <div class="piece__body">
+              <p class="piece__cat">Dormitorio</p>
+              <h3 class="piece__name">Mesita de Luz Alba</h3>
+              <p class="piece__spec">Fresno · Cajón oculto</p>
+              <div class="piece__foot">
+                <p class="piece__price">$ 240.000</p>
+                <button class="piece__add" type="button" data-add
+                        aria-label="Añadir Mesita de Luz Alba al carrito">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                       stroke-linecap="round" aria-hidden="true">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                  <span>Añadir</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 08 -->
+          <article class="piece lux reveal" data-id="p11" data-category="deco"
+                   data-name="Espejo Círculo" data-category-label="Iluminación &amp; Deco" data-price="310000">
+            <div class="piece__media" data-mark="Círculo">
+              <img src="assets/piezas/espejo-circulo.jpg" alt="Espejo Círculo con marco torneado a mano"
+                   loading="lazy" decoding="async" />
+              <button class="piece__quick" type="button" data-quick
+                      aria-label="Añadir Espejo Círculo al carrito">Añadir al carrito</button>
+            </div>
+            <div class="piece__body">
+              <p class="piece__cat">Iluminación &amp; Deco</p>
+              <h3 class="piece__name">Espejo Círculo</h3>
+              <p class="piece__spec">Nogal · Ø 90 cm</p>
+              <div class="piece__foot">
+                <p class="piece__price">$ 310.000</p>
+                <button class="piece__add" type="button" data-add
+                        aria-label="Añadir Espejo Círculo al carrito">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                       stroke-linecap="round" aria-hidden="true">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                  <span>Añadir</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 09 -->
+          <article class="piece lux reveal" data-id="p12" data-category="deco"
+                   data-name="Jarrón Arcilla" data-category-label="Iluminación &amp; Deco" data-price="95000">
+            <div class="piece__media" data-mark="Arcilla">
+              <img src="assets/piezas/jarron-arcilla.jpg" alt="Jarrón Arcilla torneado a mano"
+                   loading="lazy" decoding="async" />
+              <button class="piece__quick" type="button" data-quick
+                      aria-label="Añadir Jarrón Arcilla al carrito">Añadir al carrito</button>
+            </div>
+            <div class="piece__body">
+              <p class="piece__cat">Iluminación &amp; Deco</p>
+              <h3 class="piece__name">Jarrón Arcilla</h3>
+              <p class="piece__spec">Cerámica · Torno manual</p>
+              <div class="piece__foot">
+                <p class="piece__price">$ 95.000</p>
+                <button class="piece__add" type="button" data-add
+                        aria-label="Añadir Jarrón Arcilla al carrito">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+                       stroke-linecap="round" aria-hidden="true">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                  <span>Añadir</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="pieces__empty" id="piecesEmpty" hidden>
+          No hay piezas en este ambiente por el momento.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ============================ ESTUDIO A MEDIDA ============================ -->
+    <section class="section studio" id="estudio">
+      <div class="container">
+
+        <header class="section__head section__head--center">
+          <p class="eyebrow reveal"><span class="eyebrow__dot"></span> Custom Studio</p>
+          <h2 class="section__title reveal">Diseñado para <em>tu</em> espacio</h2>
+          <p class="section__lead reveal">
+            Movés tres medidas y ves el plano en vivo. Al terminar, enviamos tu configuración
+            directo al taller para una cotización en 48 h.
+          </p>
+        </header>
+
+        <div class="studio__panel glass lux reveal">
+
+          <div class="studio__controls">
+
+            <div class="fieldset" role="group" aria-label="Tipo de pieza">
+              <p class="fieldset__label"><span>01</span> Tipo de pieza</p>
+              <div class="chips" data-group="tipo">
+                <button class="chip is-active" type="button" data-value="mesa"
+                        data-label="Mesa de comedor" data-base="380000">Mesa de comedor</button>
+                <button class="chip" type="button" data-value="biblioteca"
+                        data-label="Biblioteca" data-base="520000">Biblioteca</button>
+                <button class="chip" type="button" data-value="placard"
+                        data-label="Placard" data-base="690000">Placard</button>
+                <button class="chip" type="button" data-value="escritorio"
+                        data-label="Escritorio" data-base="420000">Escritorio</button>
+                <button class="chip" type="button" data-value="ratona"
+                        data-label="Mesa ratona" data-base="260000">Mesa ratona</button>
+              </div>
+            </div>
+
+            <div class="fieldset" role="group" aria-label="Material">
+              <p class="fieldset__label"><span>02</span> Material</p>
+              <div class="chips" data-group="material">
+                <button class="chip is-active" type="button" data-value="roble"
+                        data-label="Roble macizo" data-factor="1">Roble macizo</button>
+                <button class="chip" type="button" data-value="nogal"
+                        data-label="Nogal americano" data-factor="1.35">Nogal americano</button>
+                <button class="chip" type="button" data-value="petiribi"
+                        data-label="Petiribí" data-factor="1.18">Petiribí</button>
+                <button class="chip" type="button" data-value="fresno"
+                        data-label="Fresno blanco" data-factor="0.92">Fresno blanco</button>
+              </div>
+            </div>
+
+            <div class="fieldset">
+              <p class="fieldset__label"><span>03</span> Medidas del espacio</p>
+
+              <div class="slider">
+                <div class="slider__head">
+                  <label for="dimAncho">Ancho</label>
+                  <output id="dimAnchoOut" for="dimAncho">180 cm</output>
+                </div>
+                <input type="range" id="dimAncho" min="60" max="400" step="5" value="180" />
+              </div>
+
+              <div class="slider">
+                <div class="slider__head">
+                  <label for="dimAlto">Alto</label>
+                  <output id="dimAltoOut" for="dimAlto">75 cm</output>
+                </div>
+                <input type="range" id="dimAlto" min="40" max="260" step="5" value="75" />
+              </div>
+
+              <div class="slider">
+                <div class="slider__head">
+                  <label for="dimProf">Profundidad</label>
+                  <output id="dimProfOut" for="dimProf">45 cm</output>
+                </div>
+                <input type="range" id="dimProf" min="30" max="120" step="5" value="45" />
+              </div>
+            </div>
+
+          </div>
+
+          <div class="studio__preview">
+            <div class="blueprint" id="blueprint">
+              <span class="blueprint__grid" aria-hidden="true"></span>
+              <span class="blueprint__piece" id="blueprintPiece" aria-hidden="true"></span>
+              <span class="blueprint__measure blueprint__measure--w" id="blueprintW">180 cm</span>
+              <span class="blueprint__measure blueprint__measure--h" id="blueprintH">75 cm</span>
+              <span class="blueprint__measure blueprint__measure--d" id="blueprintD">45 cm</span>
+            </div>
+
+            <div class="studio__result">
+              <div>
+                <p class="studio__result-label">Pieza configurada</p>
+                <p class="studio__result-value" id="studioConfig">Mesa de comedor en Roble macizo</p>
+              </div>
+              <div class="studio__result-price">
+                <p class="studio__result-label">Estimado desde</p>
+                <p class="studio__result-value" id="studioPrice">$ 570.000</p>
+              </div>
+            </div>
+
+            <button class="btn btn--primary btn--block magnetic" id="studioSend" type="button">
+              Enviar consulta al taller
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </button>
+            <p class="studio__fineprint">
+              El estimado es orientativo y varía según terminaciones, herrajes y tapizado.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================= RESEÑAS ================================= -->
+    <section class="section" id="resenas">
+      <div class="container">
+
+        <div class="reviews reveal">
+          <div class="reviews__head">
+            <div>
+              <p class="eyebrow"><span class="eyebrow__dot"></span> Reseñas</p>
+              <h3 class="reviews__title">Lo que dicen quienes ya viven con nuestras piezas</h3>
+            </div>
+            <div class="reviews__score">
+              <span class="reviews__stars" aria-hidden="true">★★★★★</span>
+              <span class="reviews__score-text"><strong>4,9</strong> / 5 · 128 reseñas</span>
+            </div>
+          </div>
+
+          <div class="carousel" id="reviewsCarousel">
+            <div class="carousel__viewport">
+              <ul class="carousel__track" id="carouselTrack">
+
+                <li class="review">
+                  <p class="review__quote">
+                    “Encargamos la mesa Terra a medida para un comedor difícil y el resultado
+                    superó cualquier expectativa. El acabado al aceite es otra cosa.”
+                  </p>
+                  <footer class="review__author">
+                    <span class="review__avatar" aria-hidden="true">MV</span>
+                    <span>
+                      <strong>Mariana V.</strong>
+                      <em>Casa Nordelta · Mesa Terra</em>
+                    </span>
+                  </footer>
+                </li>
+
+                <li class="review">
+                  <p class="review__quote">
+                    “Trabajaron con nosotros desde el plano. Nos mostraron el render, ajustaron
+                    medidas y entregaron en fecha. Impecables.”
+                  </p>
+                  <footer class="review__author">
+                    <span class="review__avatar" aria-hidden="true">JR</span>
+                    <span>
+                      <strong>Julián R.</strong>
+                      <em>Loft Palermo · Placard a medida</em>
+                    </span>
+                  </footer>
+                </li>
+
+                <li class="review">
+                  <p class="review__quote">
+                    “El sofá Aurora es la pieza de la que más me hablan las visitas.
+                    Sólido, cómodo y con una presencia increíble.”
+                  </p>
+                  <footer class="review__author">
+                    <span class="review__avatar" aria-hidden="true">CS</span>
+                    <span>
+                      <strong>Carolina S.</strong>
+                      <em>Recoleta · Sofá Aurora</em>
+                    </span>
+                  </footer>
+                </li>
+
+                <li class="review">
+                  <p class="review__quote">
+                    “Compré tres piezas para el estudio. La atención posterior, el montaje y el
+                    cuidado del detalle son de otro nivel.”
+                  </p>
+                  <footer class="review__author">
+                    <span class="review__avatar" aria-hidden="true">DL</span>
+                    <span>
+                      <strong>Diego L.</strong>
+                      <em>San Telmo · Biblioteca + Escritorio</em>
+                    </span>
+                  </footer>
+                </li>
+
+              </ul>
+            </div>
+
+            <div class="carousel__controls">
+              <button class="carousel__btn" id="prevReview" type="button" aria-label="Reseña anterior">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M15 6l-6 6 6 6" />
+                </svg>
+              </button>
+
+              <div class="carousel__dots" id="carouselDots" role="tablist" aria-label="Seleccionar reseña"></div>
+
+              <button class="carousel__btn" id="nextReview" type="button" aria-label="Reseña siguiente">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 6l6 6-6 6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================ CONTACTO ================================ -->
+    <section class="section contact" id="contacto">
+      <div class="container contact__inner">
+
+        <div class="contact__info">
+          <p class="eyebrow reveal"><span class="eyebrow__dot"></span> Contacto</p>
+          <h2 class="section__title reveal">Visitanos o <em>escribinos</em></h2>
+          <p class="contact__lead reveal">
+            Atendemos por cita previa en el showroom para que puedas tocar las maderas,
+            ver los terminados y probar las piezas con calma.
+          </p>
+
+          <ul class="contact__list reveal">
+            <li>
+              <span class="contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z" />
+                  <circle cx="12" cy="10" r="2.6" />
+                </svg>
+              </span>
+              <div>
+                <h3>Showroom</h3>
+                <p>Av. Alvear 1890, Recoleta<br />Ciudad de Buenos Aires</p>
+              </div>
+            </li>
+            <li>
+              <span class="contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5.2l3.2 1.9" />
+                </svg>
+              </span>
+              <div>
+                <h3>Horarios</h3>
+                <p>Lunes a viernes · 10 a 19 h<br />Sábados · 11 a 15 h</p>
+              </div>
+            </li>
+            <li>
+              <span class="contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                     stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 6.5 12 12l8-5.5" />
+                  <rect x="3" y="5" width="18" height="14" rx="2.4" />
+                </svg>
+              </span>
+              <div>
+                <h3>Escribinos</h3>
+                <p>
+                  <a href="mailto:hola@lumenymadera.com">hola@lumenymadera.com</a><br />
+                  <a href="tel:+541140001000">+54 11 4000-1000</a>
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="contact__social reveal">
+            <a class="social" href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17" cy="7" r="1.1" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+            <a class="social" href="https://pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2a10 10 0 0 0-3.7 19.3c-.05-.8-.01-1.75.2-2.6l1.3-5.4s-.32-.65-.32-1.6c0-1.5.87-2.63 1.95-2.63.92 0 1.37.7 1.37 1.53 0 .93-.6 2.33-.9 3.62-.26 1.08.54 1.96 1.6 1.96 1.93 0 3.4-2.03 3.4-4.97 0-2.6-1.86-4.42-4.53-4.42-3.08 0-4.9 2.31-4.9 4.7 0 .93.36 1.93.8 2.47.09.11.1.2.08.32l-.3 1.2c-.05.2-.24.29-.44.2-1.2-.56-1.95-2.32-1.95-3.74 0-3.05 2.2-5.85 6.37-5.85 3.35 0 5.94 2.38 5.94 5.57 0 3.33-2.1 6-5.01 6-.98 0-1.9-.51-2.21-1.11l-.6 2.3c-.22.84-.8 1.9-1.2 2.54A10 10 0 1 0 12 2Z" />
+              </svg>
+            </a>
+            <a class="social" href="https://wa.me/541140001000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8Zm-2.6 3.9c-.2 0-.5.1-.7.3-.3.3-.8.8-.8 1.9s.8 2.2.9 2.3c.1.2 1.6 2.5 3.9 3.4 1.9.8 2.3.6 2.7.6.4-.1 1.3-.5 1.5-1.1.2-.5.2-1 .1-1.1 0-.1-.2-.2-.4-.3l-1.4-.7c-.2-.1-.3-.1-.5.1l-.6.8c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.7-1a6.4 6.4 0 0 1-1.2-1.5c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.6-1.4c-.2-.4-.3-.4-.5-.4h-.3Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact__form-wrap">
+          <form class="form glass lux" id="contactForm" novalidate>
+            <p class="form__title">Asesoramiento personalizado</p>
+            <p class="form__sub">Completá tus datos y te respondemos dentro de las 24 h hábiles.</p>
+
+            <div class="field">
+              <input type="text" id="cName" name="nombre" placeholder=" " autocomplete="name" />
+              <label for="cName">Nombre y apellido</label>
+              <p class="field__error" id="cNameError" hidden></p>
+            </div>
+
+            <div class="field">
+              <input type="email" id="cEmail" name="email" placeholder=" " autocomplete="email" />
+              <label for="cEmail">Correo electrónico</label>
+              <p class="field__error" id="cEmailError" hidden></p>
+            </div>
+
+            <div class="field">
+              <input type="tel" id="cPhone" name="telefono" placeholder=" " autocomplete="tel" />
+              <label for="cPhone">Teléfono</label>
+              <p class="field__error" id="cPhoneError" hidden></p>
+            </div>
+
+            <div class="field field--area">
+              <textarea id="cMessage" name="mensaje" rows="4" placeholder=" "></textarea>
+              <label for="cMessage">Mensaje</label>
+              <p class="field__error" id="cMessageError" hidden></p>
+            </div>
+
+            <p class="form__hint" id="studioHint" hidden>
+              Configuración del estudio cargada. Podés editarla antes de enviar.
+            </p>
+
+            <button class="btn btn--primary btn--block magnetic" id="contactSubmit" type="submit">
+              <span class="btn__label">Enviar consulta</span>
+              <span class="btn__spinner" aria-hidden="true"></span>
+            </button>
+
+            <p class="form__legal">
+              Al enviar aceptás nuestra política de privacidad. No compartimos tus datos.
+            </p>
+          </form>
+
+          <div class="form-success glass lux" id="formSuccess" tabindex="-1" hidden>
+            <span class="success-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="m5 13 4.5 4.5L19 7" />
+              </svg>
+            </span>
+            <h3 class="form-success__title">¡Mensaje enviado con éxito!</h3>
+            <p class="form-success__text">
+              Gracias <strong id="successName">—</strong>. Recibimos tu consulta y te escribimos
+              a <strong id="successEmail">—</strong> dentro de las próximas 24 h hábiles.
+            </p>
+            <button class="btn btn--ghost btn--sm" id="formReset" type="button">
+              Enviar otra consulta
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================= FOOTER ================================= -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer__top">
+
+        <div class="footer__brand">
+          <a class="brand brand--footer" href="#top">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v18M5 8.5 12 5l7 3.5M4.5 15.5 12 19l7.5-3.5" />
+              </svg>
+            </span>
+            <span class="brand__text">LUMEN<span class="brand__amp">&amp;</span>MADERA</span>
+          </a>
+          <p class="footer__text">
+            Taller y showroom de mobiliario de autor. Diseñamos, fabricamos y montamos
+            piezas en maderas nobles de origen sustentable desde 2014.
+          </p>
+          <p class="footer__address">
+            Av. Alvear 1890, Recoleta · CABA<br />
+            <a href="mailto:hola@lumenymadera.com">hola@lumenymadera.com</a>
+          </p>
+        </div>
+
+        <nav class="footer__col" aria-label="Navegación rápida">
+          <h3 class="footer__col-title">Navegación</h3>
+          <ul>
+            <li><a href="#coleccion">Colección</a></li>
+            <li><a href="#filosofia">Filosofía</a></li>
+            <li><a href="#estudio">Diseño a medida</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Información legal">
+          <h3 class="footer__col-title">Información</h3>
+          <ul>
+            <li><a href="#coleccion">Envíos y montaje</a></li>
+            <li><a href="#coleccion">Cambios y devoluciones</a></li>
+            <li><a href="#filosofia">Cuidado de la madera</a></li>
+            <li><a href="#contacto">Preguntas frecuentes</a></li>
+            <li><a href="#contacto">Términos y privacidad</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col footer__col--news">
+          <h3 class="footer__col-title">Newsletter</h3>
+          <p class="footer__news-text">
+            Nuevas piezas, ediciones limitadas y notas del taller. Una vez por mes, sin ruido.
+          </p>
+
+          <form class="news" id="newsForm" novalidate>
+            <div class="news__field">
+              <input type="email" id="newsEmail" name="newsletter" placeholder=" " autocomplete="email" />
+              <label for="newsEmail">Tu correo electrónico</label>
+            </div>
+            <button class="news__btn" type="submit" aria-label="Suscribirme al newsletter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </button>
+          </form>
+
+          <p class="news__msg" id="newsMsg" role="status"></p>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span id="year">2026</span> LUMEN &amp; MADERA. Todos los derechos reservados.</p>
+        <ul class="footer__legal">
+          <li><a href="#contacto">Términos y condiciones</a></li>
+          <li><a href="#contacto">Política de privacidad</a></li>
+          <li><a href="#contacto">Defensa al consumidor</a></li>
+        </ul>
+        <p class="footer__made">Diseñado y fabricado en Buenos Aires</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================================ UTILIDADES ================================ -->
+  <button class="to-top" id="toTop" type="button" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M6 11l6-6 6 6" />
+    </svg>
+  </button>
+
+  <div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
